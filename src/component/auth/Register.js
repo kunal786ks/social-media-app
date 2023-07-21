@@ -35,7 +35,7 @@ export default function Register() {
 
   return (
     <Center w="100%" h="100vh">
-      <Box mx="1" maxW="md" p="9" borderWidth="1px" borderRadius="lg">
+      <Box mx="1" maxW="md" p="9" borderWidth="1px" borderRadius="lg" style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",backgroundColor:'beige'}}>
         <Heading mb="4" size="lg" textAlign="center">
          Register
         </Heading>
