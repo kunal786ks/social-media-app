@@ -13,5 +13,6 @@ export default function Users() {
         <User key={user.id} user={user} />
       ))}
     </SimpleGrid>
+    
   );
 }
