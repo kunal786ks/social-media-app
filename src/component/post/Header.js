@@ -1,4 +1,4 @@
-import { Button, Flex,Text,Box } from '@chakra-ui/react'
+import {  Flex,Text,Box } from '@chakra-ui/react'
 import React from 'react'
 import Avatar from 'component/profile/Avatar'
 import { useUser } from 'hooks/users';
