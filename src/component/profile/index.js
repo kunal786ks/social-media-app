@@ -46,9 +46,6 @@ const Profile = () => {
               posts:{posts.length}
             </Text>
             <Text color="gray.700" fontSize={["sm", "lg"]}>
-              Likes:Todo
-            </Text>
-            <Text color="gray.700" fontSize={["sm", "lg"]}>
               Joined : {format(user.date, "MMMM yyyy")}
             </Text>
           </HStack>
