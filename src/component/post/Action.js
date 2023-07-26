@@ -1,27 +1,27 @@
 import { Flex, IconButton } from "@chakra-ui/react";
 import { useAuth } from "hooks/auth";
 import React from "react";
-import { FaRegHeart, FaHeart,FaComment,FaRegComment,FaTrash } from "react-icons/fa";
-import {useToggleLike,useDeletePost} from 'hooks/posts'
+import { FaRegHeart, FaHeart, FaComment, FaRegComment, FaTrash } from "react-icons/fa";
+import { useToggleLike, useDeletePost } from 'hooks/posts'
 import { PROTECTED } from "lib/routes";
 import { Link } from "react-router-dom";
 import { useComments } from "hooks/comments";
 
 
 const Action = ({ post }) => {
-  const {id, likes,uid } = post;
+  const { id, likes, uid } = post;
   const { user, isLoading: userLoading } = useAuth();
   const isLiked = likes.includes(user?.id);
 
 
-  const configObg={
+  const configObg = {
     id,
     isLiked,
-    uid:user?.id,
+    uid: user?.id,
   }
   const { toggleLike, isLoading: likeLoading } = useToggleLike(configObg)
-  const {deletePost,isLoading:deleteLoading}=useDeletePost(id);
-  const {comments,isLoading:commentsLoading}=useComments(id);
+  const { deletePost, isLoading: deleteLoading } = useDeletePost(id);
+  const { comments, isLoading: commentsLoading } = useComments(id);
   return (
     <Flex p="2">
       <Flex alignItems="center">
@@ -43,24 +43,24 @@ const Action = ({ post }) => {
           to={`${PROTECTED}/comments/${id}`}
           colorScheme="teal"
           variant="ghost"
-          icon={comments?.length===0?<FaRegComment/>:<FaComment/>}
+          icon={comments?.length === 0 ? <FaRegComment /> : <FaComment />}
           isRound
         />
         {comments?.length}
       </Flex>
-      {!userLoading && user.id===uid && 
+      {!userLoading && user.id === uid &&
         <IconButton
-        ml='auto'
+          ml='auto'
           size="md"
           onClick={deletePost}
           isLoading={deleteLoading}
           colorScheme="red"
           variant="ghost"
-          icon={<FaTrash/>}
+          icon={<FaTrash />}
           isRound
         />
       }
-      
+
     </Flex>
   );
 };

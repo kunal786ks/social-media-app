@@ -54,7 +54,6 @@ const Profile = () => {
         <EditProfile isOpen={isOpen} onClose={onClose} />
       </Flex>
       <Divider />
-
       {postsLoading ? <Text>Loading.....</Text> : <PostsLists posts={posts} />}
     </Stack>
   );
