@@ -6,7 +6,7 @@ import { getStorage } from 'firebase/storage'
 
 
 
-
+  
 const firebaseConfig = {
   apiKey: "AIzaSyBYJvQimGF28oLRjWT9Ut8yyLnfDyB_eGM",
   authDomain: "social-media-app-f0078.firebaseapp.com",
